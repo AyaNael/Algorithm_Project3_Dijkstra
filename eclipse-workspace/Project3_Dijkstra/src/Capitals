@@ -1,0 +1,236 @@
+50,185
+Amman,31.953097236405213,35.92160846350562
+Berlin,52.523936298557636,13.415168810010343
+Riyadh,24.726245249614337,46.68275675486493
+Cairo,30.04519864233323,31.23786943477705
+Maputo,-25.965088417354607,32.57429573228392
+Moscow,55.7491161489776,37.62740105937976
+Baghdad,33.31444637556965,44.36759521192756
+Khartoum,15.596742232276688,32.53622395895102
+Doha,25.283296721491713,51.52574812575847
+Beijing,39.90576787307846,116.39340232810662
+Pyongyang,39.05203357793659,125.76382018927816
+Madrid,40.4108767866196,-3.7089587780957314
+Muscat,23.587772165934908,58.380589738919994
+Antananarivo,-18.910155456440013,47.540108054516104
+Algiers,36.73232944181073,3.0949835546461517
+Rabat,34.01160568165445,-6.854511940160767
+Jakarta,-6.202416549387662,106.82129820112168
+Mogadishu,2.0382693820888638, 45.336882324266774
+Ulaanbaatar,47.920795033449295,106.92432455963383
+Rome,41.89104354911258,12.476275175281607
+Canberra,-35.281924443828686,149.1304848557258
+Wellington,-32.55214363181879,148.9478192576769
+Tokyo,35.845660262566035,139.78736762644374
+Mexico City,19.44635178329824,-99.11063436592343
+Ottawa,45.41906546273187,-75.68340550829463
+Brasilia,-15.800125792506272,-47.892020132402735
+Buenos Aires,-34.6087320487714,-58.56272715611511
+Washington,38.918742158704035,-77.04589294199279
+Kampala,0.30787927105440516,32.58745749566313
+Lagos,0.3307764534022623,32.55540951597385
+Accra,5.5610571054396924,-0.20911905534726047
+Kampala,0.309939177598567,32.582650977296915
+Addis Ababa,9.021466137518413,38.75893880015794
+Nairobi,-1.2921475777669045,36.832843574961906
+Vienna,48.209591958060564,16.362490192474706
+Amsterdam,52.36377653849757,4.915646142836104
+Lisbon,38.72717875338722,-9.13398255302657
+Oslo,59.914490265577676,10.753598258919297
+Libreville,0.41189526809980553,9.443576177710968
+Helsinki,60.18252807726819,24.922810334246947
+Brussels,50.84685837140583,4.36374744607158
+Stockholm,59.335144375938775,18.050041155725236
+Bogota,3.605500336908114,-73.71352615024104
+Morroco,31.60032937351167,-6.515996951913963
+Santiago,-33.44943783596125,-70.63388661712266
+Tunisia,34.068144192908335,9.92306238210101
+Ljubljana,46.05584389767147,14.5218030422708
+Reykjavik,64.14543700716384,-21.93340810908919
+Conakry,9.510956828153015,-13.708400405671162
+Athenes:15.903542097524346:47.62190124653392
+Riyadh,Bogota,2500,1740
+Cairo,Mexico City,820,1620
+Moscow,Rabat
+Baghdad,Accra,1000,1320
+Khartoum,Accra,760,1810
+Doha,Cairo,155,180
+Amman,Rabat,450,720
+Beijing,Oslo,410,1440
+Pyongyang,Morroco,515,1920
+Madrid,Jakarta,871,1065
+Antananarivo,Ulaanbaatar,1690,2050
+Rabat,Accra,624,1380
+Jakarta,Rome,407,1410
+Mogadishu,Rome,939,1400
+Ulaanbaatar,Helsinki,355,415
+Rome,Mexico City,900,900
+Canberra,Bogota,1650,1460
+Wellington,Amsterdam,1300,1560
+Tokyo,Vienna,700,720
+Mexico City,Oslo,800,840
+Ottawa,Baghdad,1200,1000
+Brasilia,Conakry,1400,1120
+Buenos Aires,Conakry,1550,1300
+Washington,Rabat,900,630
+Kampala,Lisbon,1000,820
+Lagos,Helsinki,750,680
+Accra,Doha,700,490
+Kampala,Mogadishu,250,220
+Addis Ababa,Algiers,600,540
+Nairobi,Ottawa,1200,960
+Vienna,Athens,250,180
+Amsterdam,Stockholm,200,140
+Libreville,Madrid,800,720
+Helsinki,Canberra,1500,1440
+Brussels,Nairobi,1000,900
+Stockholm,Doha,900,780
+Bogota,Maputo,1400,1260
+Morocco,Nairobi,700,600
+Santiago,Moscow,1300,1320
+Tunisia,Stockholm,1000,780
+Ljubljana,Tokyo,1500,1080
+Reykjavik,Washington,1100,1020
+Conakry,Lagos,500,300
+Riyadh,Accra,800,540
+Khartoum,Athens,600,480
+Cairo,Stockholm,900,780
+Maputo,Amsterdam,1400,1260
+Baghdad,Kampala,850,600
+Khartoum,Vienna,700,720
+Doha,Ljubljana,850,600
+Beijing,Ljubljana,1100,1020
+Pyongyang,Morocco,1300,1200
+Muscat,Cairo,450,240
+Antananarivo,Reykjavik,1500,1320
+Algiers,Rabat,200,120
+Vienna,Athens,250,180
+Athens,Lisbon,350,240
+Rabat,Antananarivo,1200,900
+Jakarta,Bogota,1400,1320
+Mogadishu,Ljubljana,1300,1020
+Ulaanbaatar,Moscow,900,840
+Rome,Brasilia,1300,960
+Canberra,Pyongyang,1600,1440
+Wellington,Beijing,1500,1440
+Tokyo,Ulaanbaatar,800,600
+Mexico City,Reykjavik,1100,1080
+Ottawa,Bogota,1400,1200
+Brasilia,Cairo,1400,1320
+Buenos Aires,Antananarivo,1500,1320
+Washington,Beijing,1100,1020
+Kampala,Beijing,1200,1140
+Lagos,Beijing,1400,1260
+Accra,Moscow,1200,1320
+Kampala,Canberra,1500,1440
+Addis Ababa,Lagos,800,540
+Nairobi,Ulaanbaatar,1100,1080
+Vienna,Stockholm,300,180
+Amsterdam,Riyadh,900,720
+Lisbon,Khartoum,700,660
+Oslo,Canberra,1500,1440
+Libreville,Beijing,1400,1320
+Helsinki,Baghdad,900,840
+Brussels,Accra,700,600
+Bogota,Beijing,1400,1320
+Morocco,Washington,1100,1020
+Santiago,Tokyo,1500,1440
+Tunisia,Buenos Aires,1500,1440
+Ljubljana,Tunisia,1200,960
+Reykjavik,Helsinki,500,300
+Conakry,Kampala,800,540
+Riyadh,Athens,600,540
+Cairo,Rome,700,480
+Maputo,Rabat,800,660
+Moscow,Vienna,600,480
+Baghdad,Maputo,1400,1320
+Khartoum,Doha,850,780
+Doha,Lagos,750,660
+Beijing,Jakarta,800,780
+Pyongyang,Accra,1300,1260
+Madrid,Beijing,1100,1080
+Muscat,Madrid,800,720
+Antananarivo,Kampala,700,600
+Algiers,Oslo,1200,1080
+Rabat,Reykjavik,1300,1200
+Jakarta,Baghdad,900,840
+Mogadishu,Addis Ababa,500,420
+Rome,Khartoum,800,600
+Canberra,Kampala,1500,1440
+Wellington,Riyadh,1500,1440
+Tokyo,Rabat,1500,1320
+Mexico City,Ljubljana,1300,1260
+Ottawa,Athens,1200,1140
+Brasilia,Oslo,1400,1320
+Buenos Aires,Accra,1400,1260
+Washington,Muscat,1100,1020
+Kampala,Riyadh,800,660
+Lagos,Oslo,1200,1140
+Accra,Buenos Aires,1400,1320
+Addis Ababa,Khartoum,500,420
+Nairobi,Tunisia,800,660
+Vienna,Libreville,1400,1260
+Amsterdam,Antananarivo,1400,1260
+Lisbon,Accra,800,660
+Oslo,Riyadh,1200,1140
+Libreville,Wellington,1500,1440
+Helsinki,Jerusalem,1000,960
+Brussels,Kampala,1100,1020
+Stockholm,Algiers,1200,1080
+Amman,Doha,850,780
+Baghdad,Amman,700,660
+Bogota,Pyongyang,1500,1440
+Morocco,Santiago,1500,1440
+Santiago,Maputo,1400,1320
+Tunisia,Brussels,1200,960
+Ljubljana,Addis Ababa,1200,1080
+Conakry,Wellington,1500,1440
+Riyadh,Kampala,1000,900
+Cairo,Mogadishu,600,480
+Maputo,Conakry,800,660
+Moscow,Doha,850,780
+Baghdad,Moscow,700,660
+Khartoum,Mogadishu,600,480
+Doha,Riyadh,700,600
+Beijing,Buenos Aires,1500,1440
+Pyongyang,Baghdad,1100,1020
+Jerusalem,Vienna,800,720
+Madrid,Madrid,0,0
+Muscat,Ljubljana,1100,1020
+Antananarivo,Ulaanbaatar,1500,1440
+Algiers,Rome,900,720
+Rabat,Beijing,1100,1020
+Berlin,Amman,800,720
+Jakarta,Mexico City,1400,1320
+Mogadishu,Santiago,1500,1440
+Ulaanbaatar,Ljubljana,1400,1320
+Riyadh,Athens,800,720
+Rome,Morocco,700,600
+Canberra,Pyongyang,1500,1440
+Wellington,Ottawa,1400,1320
+Tokyo,Kampala,1400,1320
+Mexico City,Helsinki,1400,1320
+Ottawa,Addis Ababa,1400,1320
+Brasilia,Amsterdam,1300,1260
+Washington,Kampala,1200,1140
+Kampala,Amsterdam,1100,1020
+Lagos,Rome,1300,1200
+Accra,Wellington,1500,1440
+Addis Ababa,Stockholm,1400,1320
+Nairobi,Washington,1200,1140
+Amsterdam,Beijing,1400,1320
+Lisbon,Doha,850,780
+Oslo,Khartoum,1000,900
+Libreville,Lisbon,800,660
+Helsinki,Rabat,1100,1020
+Ottawa,Athens,1200,1140
+Athens,Mexico City,1300,1260
+Brussels,Rabat,800,720
+Stockholm,Helsinki,500,300
+Bogota,Accra,1400,1320
+Morocco,Maputo,1400,1320
+Santiago,Brussels,1500,1440
+Athens,Ottawa,1200,1140
+Athens,Mexico City,1400,1320
+Tunisia,Lagos,900,720
+Ljubljana,Santiago,1500,1440
