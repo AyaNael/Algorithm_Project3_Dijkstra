@@ -12,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -88,41 +87,112 @@ public class MapInterface extends Application {
 	}
 
 	private void initializeGraphFromFile(String filePath) {
-		try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-			String line = reader.readLine();
+	    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+	        String line = reader.readLine();
 
-			// Read the number of capitals and edges
-			String[] parts = line.split(",");
-			int numOfCapitals = Integer.parseInt(parts[0].trim());
-			int numOfEdges = Integer.parseInt(parts[1].trim());
+	        // Read the first line and extract the number of capitals and edges
+	        if (line == null) {
+	            System.out.println("Error: The file is empty.");
+	            return;
+	        }
 
-			// Initialize the graph
-			graph = new Graph(numOfCapitals);
+	        String[] parts = line.split(",");
+	        if (parts.length != 2) {
+	            System.out.println("Error: The first line must contain exactly two values: the number of capitals and edges.");
+	            return;
+	        }
 
-			// Read capitals
-			for (int i = 0; i < numOfCapitals; i++) {
-				line = reader.readLine();
-				parts = line.split(",");
-				String name = parts[0].trim();
-				double latitude = Double.parseDouble(parts[1].trim());
-				double longitude = Double.parseDouble(parts[2].trim());
-				graph.addCapital(name, latitude, longitude);
-			}
+	        int numOfCapitals;
+	        int numOfEdges;
+	        try {
+	            numOfCapitals = Integer.parseInt(parts[0].trim());
+	            numOfEdges = Integer.parseInt(parts[1].trim());
+	        } catch (NumberFormatException e) {
+	            System.out.println("Error: The first line must contain numeric values for capitals and edges count.");
+	            return;
+	        }
 
-			// Read edges
-			for (int i = 0; i < numOfEdges; i++) {
-				line = reader.readLine();
-				parts = line.split(",");
-				String from = parts[0].trim();
-				String to = parts[1].trim();
-				double cost = Double.parseDouble(parts[2].trim());
-				int time = Integer.parseInt(parts[3].trim());
-				graph.addEdge(from, to, cost, time);
-			}
+	        graph = new Graph(numOfCapitals);
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	        // Read the capitals and validate the count
+	        int actualCapitalsCount = 0;
+	        for (int i = 0; i < numOfCapitals; i++) {
+	            line = reader.readLine();
+	            if (line == null) {
+	                System.out.println("Error: The file does not contain enough capitals as specified in the first line.");
+	                return;
+	            }
+
+	            parts = line.split(",");
+	            if (parts.length != 3) {
+	                System.out.println("Error: Each capital line must contain three values: name, latitude, and longitude.");
+	                return;
+	            }
+
+	            String name = parts[0].trim();
+	            double latitude;
+	            double longitude;
+	            try {
+	                latitude = Double.parseDouble(parts[1].trim());
+	                longitude = Double.parseDouble(parts[2].trim());
+	            } catch (NumberFormatException e) {
+	                System.out.println("Error: Latitude and longitude must be numeric values for capital: " + name);
+	                return;
+	            }
+
+	            graph.addCapital(name, latitude, longitude);
+	            actualCapitalsCount++;
+	        }
+
+	        if (actualCapitalsCount != numOfCapitals) {
+	            System.out.println("Error: The actual number of capitals does not match the count specified in the first line.");
+	            return;
+	        }
+
+	        // Read the edges and validate the count
+	        int actualEdgesCount = 0;
+	        for (int i = 0; i < numOfEdges; i++) {
+	            line = reader.readLine();
+	            if (line == null) {
+	                System.out.println("Error: The file does not contain enough edges as specified in the first line.");
+	                return;
+	            }
+
+	            parts = line.split(",");
+	            if (parts.length != 4) {
+	                System.out.println("Error: Each edge line must contain four values: from, to, cost, and time.");
+	                return;
+	            }
+
+	            String from = parts[0].trim();
+	            String to = parts[1].trim();
+	            double cost;
+	            int time;
+	            try {
+	                cost = Double.parseDouble(parts[2].trim().replace("$", ""));
+	                time = Integer.parseInt(parts[3].trim().replace("min", ""));
+	            } catch (NumberFormatException e) {
+	                System.out.println("Error: Cost and time must be numeric values for edge: " + from + " -> " + to);
+	                return;
+	            }
+
+	            graph.addEdge(from, to, cost, time);
+	            actualEdgesCount++;
+	        }
+
+	        if (actualEdgesCount != numOfEdges) {
+	            System.out.println("Error: The actual number of edges does not match the count specified in the first line.");
+	            return;
+	        }
+
+	        // Debugging: Display all edges
+	        graph.displayEdges();
+
+	        System.out.println("Graph successfully initialized with " + numOfCapitals + " capitals and " + numOfEdges + " edges.");
+
+	    } catch (IOException e) {
+	        System.out.println("Error: Failed to read the file. " + e.getMessage());
+	    }
 	}
 
 	private void plotCapitalsOnMap() {
@@ -233,6 +303,8 @@ public class MapInterface extends Application {
 				+ "-fx-font-size: 14; -fx-border-radius: 5; -fx-background-radius: 5;");
 		runButton.setOnMouseEntered(e -> runButton.setStyle("-fx-background-color: #45a049; -fx-text-fill: white;"));
 		runButton.setOnMouseExited(e -> runButton.setStyle("-fx-background-color: #4caf50; -fx-text-fill: white;"));
+	
+	    runButton.setOnAction(e -> calculateShortestPath());
 
 		Button clearBt = new Button("Clear");
 		clearBt.setStyle("-fx-background-color: Blue; -fx-text-fill: white; "
@@ -270,6 +342,7 @@ public class MapInterface extends Application {
 		pathTextArea.clear();
 		costTextField.clear();
 		filterComboBox.setValue(null);
+		timeTextField.clear();
 
 
 	    if (sourceCircle != null) sourceCircle.setFill(Color.RED);
@@ -280,7 +353,63 @@ public class MapInterface extends Application {
 	  //  sourceToggle.setSelected(false);
 	  //  targetToggle.setSelected(false);
 	}
-	
+	 private void calculateShortestPath() {
+	        if (sourceComboBox.getValue() == null || targetComboBox.getValue() == null || filterComboBox.getValue() == null) {
+	            Alert alert = new Alert(Alert.AlertType.WARNING, "Please select Source, Target, and Filter!", ButtonType.OK);
+	            alert.show();
+	            return;
+	        }
+
+	        String source = sourceComboBox.getValue();
+	        String target = targetComboBox.getValue();
+	        String filter = filterComboBox.getValue();
+
+	        try {
+	            GraphTable[] T = new GraphTable[graph.getNumberOfVertices()];
+	            graph.dijkstra(source, T, filter);
+
+	            int targetIndex = graph.getVertexIndex(target);
+	            double totalMetric = T[targetIndex].getDistance();
+
+	            StringBuilder pathBuilder = new StringBuilder();
+	            graph.buildPath(targetIndex, T, pathBuilder);
+	            pathTextArea.setText(pathBuilder.toString());
+	            
+	            double totalDistance = 0;
+	            double totalCost = 0;
+	            int totalTime = 0;
+
+	            Capital current = graph.getVertex(targetIndex);
+
+	            while (T[targetIndex].getPath() != null) {
+	                Capital previous = T[targetIndex].getPath();
+	                int previousIndex = graph.getVertexIndex(previous.getCapitalName());
+
+	                // Find the edge connecting 'previous' to 'current'
+	                for (Edge edge : graph.getVertex(previousIndex).getEdges()) {
+	                    if (edge.getDestination().equals(current.getCapitalName())) {
+	                    	System.out.println(edge.getDestination()+ " "+edge.getDistance());
+	                        totalDistance += edge.getDistance();
+	                        totalCost += edge.getCost();
+	                        totalTime += edge.getTime();
+	                        break;
+	                    }
+	                }
+
+	                // Move to the previous vertex
+	                targetIndex = previousIndex;
+	                current = previous;
+	            }
+
+	            distanceTextField.setText(String.format("%.2f km", totalDistance));
+	            costTextField.setText(String.format("$%.2f", totalCost));
+	            timeTextField.setText(String.format("%d mins", totalTime));
+
+	        } catch (IllegalArgumentException ex) {
+	            Alert alert = new Alert(Alert.AlertType.ERROR, ex.getMessage(), ButtonType.OK);
+	            alert.show();
+	        }
+	    }
 	private void handleMarkerClick(Circle marker, String capitalName) {
 	    if (activeComboBox == null) {
 	        Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a ComboBox first!", ButtonType.OK);
