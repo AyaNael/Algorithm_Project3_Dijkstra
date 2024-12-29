@@ -1,4 +1,4 @@
-50,185
+51,186
 Amman,31.953097236405213,35.92160846350562
 Berlin,52.523936298557636,13.415168810010343
 Riyadh,24.726245249614337,46.68275675486493
@@ -48,189 +48,191 @@ Tunisia,34.068144192908335,9.92306238210101
 Ljubljana,46.05584389767147,14.5218030422708
 Reykjavik,64.14543700716384,-21.93340810908919
 Conakry,9.510956828153015,-13.708400405671162
-Athenes:15.903542097524346:47.62190124653392
-Riyadh,Bogota,2500,1740
-Cairo,Mexico City,820,1620
-Moscow,Rabat
-Baghdad,Accra,1000,1320
-Khartoum,Accra,760,1810
-Doha,Cairo,155,180
-Amman,Rabat,450,720
-Beijing,Oslo,410,1440
-Pyongyang,Morroco,515,1920
-Madrid,Jakarta,871,1065
-Antananarivo,Ulaanbaatar,1690,2050
-Rabat,Accra,624,1380
-Jakarta,Rome,407,1410
-Mogadishu,Rome,939,1400
-Ulaanbaatar,Helsinki,355,415
-Rome,Mexico City,900,900
-Canberra,Bogota,1650,1460
-Wellington,Amsterdam,1300,1560
-Tokyo,Vienna,700,720
-Mexico City,Oslo,800,840
-Ottawa,Baghdad,1200,1000
-Brasilia,Conakry,1400,1120
-Buenos Aires,Conakry,1550,1300
-Washington,Rabat,900,630
-Kampala,Lisbon,1000,820
-Lagos,Helsinki,750,680
-Accra,Doha,700,490
-Kampala,Mogadishu,250,220
-Addis Ababa,Algiers,600,540
-Nairobi,Ottawa,1200,960
-Vienna,Athens,250,180
-Amsterdam,Stockholm,200,140
-Libreville,Madrid,800,720
-Helsinki,Canberra,1500,1440
-Brussels,Nairobi,1000,900
-Stockholm,Doha,900,780
-Bogota,Maputo,1400,1260
-Morocco,Nairobi,700,600
-Santiago,Moscow,1300,1320
-Tunisia,Stockholm,1000,780
-Ljubljana,Tokyo,1500,1080
-Reykjavik,Washington,1100,1020
-Conakry,Lagos,500,300
-Riyadh,Accra,800,540
-Khartoum,Athens,600,480
-Cairo,Stockholm,900,780
-Maputo,Amsterdam,1400,1260
-Baghdad,Kampala,850,600
-Khartoum,Vienna,700,720
-Doha,Ljubljana,850,600
-Beijing,Ljubljana,1100,1020
-Pyongyang,Morocco,1300,1200
-Muscat,Cairo,450,240
-Antananarivo,Reykjavik,1500,1320
-Algiers,Rabat,200,120
-Vienna,Athens,250,180
-Athens,Lisbon,350,240
-Rabat,Antananarivo,1200,900
-Jakarta,Bogota,1400,1320
-Mogadishu,Ljubljana,1300,1020
-Ulaanbaatar,Moscow,900,840
-Rome,Brasilia,1300,960
-Canberra,Pyongyang,1600,1440
-Wellington,Beijing,1500,1440
-Tokyo,Ulaanbaatar,800,600
-Mexico City,Reykjavik,1100,1080
-Ottawa,Bogota,1400,1200
-Brasilia,Cairo,1400,1320
-Buenos Aires,Antananarivo,1500,1320
-Washington,Beijing,1100,1020
-Kampala,Beijing,1200,1140
-Lagos,Beijing,1400,1260
-Accra,Moscow,1200,1320
-Kampala,Canberra,1500,1440
-Addis Ababa,Lagos,800,540
-Nairobi,Ulaanbaatar,1100,1080
-Vienna,Stockholm,300,180
-Amsterdam,Riyadh,900,720
-Lisbon,Khartoum,700,660
-Oslo,Canberra,1500,1440
-Libreville,Beijing,1400,1320
-Helsinki,Baghdad,900,840
-Brussels,Accra,700,600
-Bogota,Beijing,1400,1320
-Morocco,Washington,1100,1020
-Santiago,Tokyo,1500,1440
-Tunisia,Buenos Aires,1500,1440
-Ljubljana,Tunisia,1200,960
-Reykjavik,Helsinki,500,300
-Conakry,Kampala,800,540
-Riyadh,Athens,600,540
-Cairo,Rome,700,480
-Maputo,Rabat,800,660
-Moscow,Vienna,600,480
-Baghdad,Maputo,1400,1320
-Khartoum,Doha,850,780
-Doha,Lagos,750,660
-Beijing,Jakarta,800,780
-Pyongyang,Accra,1300,1260
-Madrid,Beijing,1100,1080
-Muscat,Madrid,800,720
-Antananarivo,Kampala,700,600
-Algiers,Oslo,1200,1080
-Rabat,Reykjavik,1300,1200
-Jakarta,Baghdad,900,840
-Mogadishu,Addis Ababa,500,420
-Rome,Khartoum,800,600
-Canberra,Kampala,1500,1440
-Wellington,Riyadh,1500,1440
-Tokyo,Rabat,1500,1320
-Mexico City,Ljubljana,1300,1260
-Ottawa,Athens,1200,1140
-Brasilia,Oslo,1400,1320
-Buenos Aires,Accra,1400,1260
-Washington,Muscat,1100,1020
-Kampala,Riyadh,800,660
-Lagos,Oslo,1200,1140
-Accra,Buenos Aires,1400,1320
-Addis Ababa,Khartoum,500,420
-Nairobi,Tunisia,800,660
-Vienna,Libreville,1400,1260
-Amsterdam,Antananarivo,1400,1260
-Lisbon,Accra,800,660
-Oslo,Riyadh,1200,1140
-Libreville,Wellington,1500,1440
-Helsinki,Jerusalem,1000,960
-Brussels,Kampala,1100,1020
-Stockholm,Algiers,1200,1080
-Amman,Doha,850,780
-Baghdad,Amman,700,660
-Bogota,Pyongyang,1500,1440
-Morocco,Santiago,1500,1440
-Santiago,Maputo,1400,1320
-Tunisia,Brussels,1200,960
-Ljubljana,Addis Ababa,1200,1080
-Conakry,Wellington,1500,1440
-Riyadh,Kampala,1000,900
-Cairo,Mogadishu,600,480
-Maputo,Conakry,800,660
-Moscow,Doha,850,780
-Baghdad,Moscow,700,660
-Khartoum,Mogadishu,600,480
-Doha,Riyadh,700,600
-Beijing,Buenos Aires,1500,1440
-Pyongyang,Baghdad,1100,1020
-Jerusalem,Vienna,800,720
-Madrid,Madrid,0,0
-Muscat,Ljubljana,1100,1020
-Antananarivo,Ulaanbaatar,1500,1440
-Algiers,Rome,900,720
-Rabat,Beijing,1100,1020
-Berlin,Amman,800,720
-Jakarta,Mexico City,1400,1320
-Mogadishu,Santiago,1500,1440
-Ulaanbaatar,Ljubljana,1400,1320
-Riyadh,Athens,800,720
-Rome,Morocco,700,600
-Canberra,Pyongyang,1500,1440
-Wellington,Ottawa,1400,1320
-Tokyo,Kampala,1400,1320
-Mexico City,Helsinki,1400,1320
-Ottawa,Addis Ababa,1400,1320
-Brasilia,Amsterdam,1300,1260
-Washington,Kampala,1200,1140
-Kampala,Amsterdam,1100,1020
-Lagos,Rome,1300,1200
-Accra,Wellington,1500,1440
-Addis Ababa,Stockholm,1400,1320
-Nairobi,Washington,1200,1140
-Amsterdam,Beijing,1400,1320
-Lisbon,Doha,850,780
-Oslo,Khartoum,1000,900
-Libreville,Lisbon,800,660
-Helsinki,Rabat,1100,1020
-Ottawa,Athens,1200,1140
-Athens,Mexico City,1300,1260
-Brussels,Rabat,800,720
-Stockholm,Helsinki,500,300
-Bogota,Accra,1400,1320
-Morocco,Maputo,1400,1320
-Santiago,Brussels,1500,1440
-Athens,Ottawa,1200,1140
-Athens,Mexico City,1400,1320
-Tunisia,Lagos,900,720
-Ljubljana,Santiago,1500,1440
+Athenes,15.903542097524346,47.62190124653392
+Jerusalem,31.76944264703155,35.215188813553446
+Riyadh, Bogota, 2500$, 1740min
+Cairo, Mexico City, 820$, 1620min
+Moscow, Rabat, 800$, 1200min
+Baghdad, Accra, 1000$, 1320min
+Khartoum, Accra, 760$, 1810min
+Doha, Cairo, 155$, 180min
+Amman, Rabat, 450$, 720min
+Beijing, Oslo, 410$, 1440min
+Pyongyang, Morroco, 515$, 1920min
+Madrid, Jakarta, 871$, 1065min
+Antananarivo, Ulaanbaatar, 1690$, 2050min
+Rabat, Accra, 624$, 1380min
+Jakarta, Rome, 407$, 1410min
+Mogadishu, Rome, 939$, 1400min
+Ulaanbaatar, Helsinki, 355$, 415min
+Rome, Mexico City, 900$, 900min
+Canberra, Bogota, 1650$, 1460min
+Wellington, Amsterdam, 1300$, 1560min
+Tokyo, Vienna, 700$, 720min
+Mexico City, Oslo, 800$, 840min
+Ottawa, Baghdad, 1200$, 1000min
+Brasilia, Conakry, 1400$, 1120min
+Buenos Aires, Conakry, 1550$, 1300min
+Washington, Rabat, 900$, 630min
+Kampala, Lisbon, 1000$, 820min
+Lagos, Helsinki, 750$, 680min
+Accra, Doha, 700$, 490min
+Kampala, Mogadishu, 250$, 220min
+Addis Ababa, Algiers, 600$, 540min
+Nairobi, Ottawa, 1200$, 960min
+Vienna, Athenes, 250$, 180min
+Amsterdam, Stockholm, 200$, 140min
+Libreville, Madrid, 800$, 720min
+Helsinki, Canberra, 1500$, 1440min
+Brussels, Nairobi, 1000$, 900min
+Stockholm, Doha, 900$, 780min
+Bogota, Maputo, 1400$, 1260min
+Morroco, Nairobi, 700$, 600min
+Santiago, Moscow, 1300$, 1320min
+Tunisia, Stockholm, 1000$, 780min
+Ljubljana, Tokyo, 1500$, 1080min
+Reykjavik, Washington, 1100$, 1020min
+Conakry, Lagos, 500$, 300min
+Riyadh, Accra, 800$, 540min
+Khartoum, Athenes, 600$, 480min
+Cairo, Stockholm, 900$, 780min
+Maputo, Amsterdam, 1400$, 1260min
+Baghdad, Kampala, 850$, 600min
+Khartoum, Vienna, 700$, 720min
+Doha, Ljubljana, 850$, 600min
+Beijing, Ljubljana, 1100$, 1020min
+Pyongyang, Morroco, 1300$, 1200min
+Muscat, Cairo, 450$, 240min
+Antananarivo, Reykjavik, 1500$, 1320min
+Algiers, Rabat, 200$, 120min
+Vienna, Athenes, 250$, 180min
+Athenes, Lisbon, 350$, 240min
+Rabat, Antananarivo, 1200$, 900min
+Jakarta, Bogota, 1400$, 1320min
+Mogadishu, Ljubljana, 1300$, 1020min
+Ulaanbaatar, Moscow, 900$, 840min
+Rome, Brasilia, 1300$, 960min
+Canberra, Pyongyang, 1600$, 1440min
+Wellington, Beijing, 1500$, 1440min
+Tokyo, Ulaanbaatar, 800$, 600min
+Mexico City, Reykjavik, 1100$, 1080min
+Ottawa, Bogota, 1400$, 1200min
+Brasilia, Cairo, 1400$, 1320min
+Buenos Aires, Antananarivo, 1500$, 1320min
+Washington, Beijing, 1100$, 1020min
+Kampala, Beijing, 1200$, 1140min
+Lagos, Beijing, 1400$, 1260min
+Accra, Moscow, 1200$, 1320min
+Kampala, Canberra, 1500$, 1440min
+Addis Ababa, Lagos, 800$, 540min
+Nairobi, Ulaanbaatar, 1100$, 1080min
+Vienna, Stockholm, 300$, 180min
+Amsterdam, Riyadh, 900$, 720min
+Lisbon, Khartoum, 700$, 660min
+Oslo, Canberra, 1500$, 1440min
+Libreville, Beijing, 1400$, 1320min
+Helsinki, Baghdad, 900$, 840min
+Brussels, Accra, 700$, 600min
+Bogota, Beijing, 1400$, 1320min
+Morroco, Washington, 1100$, 1020min
+Santiago, Tokyo, 1500$, 1440min
+Tunisia, Buenos Aires, 1500$, 1440min
+Ljubljana, Tunisia, 1200$, 960min
+Reykjavik, Helsinki, 500$, 300min
+Conakry, Kampala, 800$, 540min
+Riyadh, Athenes, 600$, 540min
+Cairo, Rome, 700$, 480min
+Maputo, Rabat, 800$, 660min
+Moscow, Vienna, 600$, 480min
+Baghdad, Maputo, 1400$, 1320min
+Khartoum, Doha, 850$, 780min
+Doha, Riyadh, 700$, 600min
+Beijing, Jakarta, 800$, 780min
+Pyongyang, Accra, 1300$, 1260min
+Madrid, Beijing, 1100$, 1080min
+Muscat, Madrid, 800$, 720min
+Antananarivo, Kampala, 700$, 600min
+Algiers, Oslo, 1200$, 1080min
+Rabat, Reykjavik, 1300$, 1200min
+Jakarta, Baghdad, 900$, 840min
+Mogadishu, Addis Ababa, 500$, 420min
+Rome, Khartoum, 800$, 600min
+Canberra, Kampala, 1500$, 1440min
+Wellington, Riyadh, 1500$, 1440min
+Tokyo, Rabat, 1500$, 1320min
+Mexico City, Ljubljana, 1300$, 1260min
+Ottawa, Athenes, 1200$, 1140min
+Brasilia, Oslo, 1400$, 1320min
+Buenos Aires, Accra, 1400$, 1260min
+Washington, Muscat, 1100$, 1020min
+Kampala, Riyadh, 800$, 660min
+Lagos, Oslo, 1200$, 1140min
+Accra, Buenos Aires, 1400$, 1320min
+Addis Ababa, Khartoum, 500$, 420min
+Nairobi, Tunisia, 800$, 660min
+Vienna, Libreville, 1400$, 1260min
+Amsterdam, Antananarivo, 1400$, 1260min
+Lisbon, Accra, 800$, 660min
+Oslo, Riyadh, 1200$, 1140min
+Libreville, Wellington, 1500$, 1440min
+Helsinki, Jerusalem, 1000$, 960min
+Brussels, Kampala, 1100$, 1020min
+Stockholm, Algiers, 1200$, 1080min
+Amman, Doha, 850$, 780min
+Baghdad, Amman, 700$, 660min
+Bogota, Pyongyang, 1500$, 1440min
+Morroco, Santiago, 1500$, 1440min
+Santiago, Maputo, 1400$, 1320min
+Tunisia, Brussels, 1200$, 960min
+Ljubljana, Addis Ababa, 1200$, 1080min
+Conakry, Wellington, 1500$, 1440min
+Riyadh, Kampala, 1000$, 900min
+Cairo, Mogadishu, 600$, 480min
+Maputo, Conakry, 800$, 660min
+Moscow, Doha, 850$, 780min
+Baghdad, Moscow, 700$, 660min
+Khartoum, Mogadishu, 600$, 480min
+Doha, Riyadh, 700$, 600min
+Beijing, Buenos Aires, 1500$, 1440min
+Pyongyang, Baghdad, 1100$, 1020min
+Jerusalem, Vienna, 800$, 720min
+Madrid, Madrid, 0$, 0min
+Muscat, Ljubljana, 1100$, 1020min
+Antananarivo, Ulaanbaatar, 1500$, 1440min
+Algiers, Rome, 900$, 720min
+Rabat, Beijing, 1100$, 1020min
+Berlin, Amman, 800$, 720min
+Jakarta, Mexico City, 1400$, 1320min
+Mogadishu, Santiago, 1500$, 1440min
+Ulaanbaatar, Ljubljana, 1400$, 1320min
+Riyadh, Athenes, 800$, 720min
+Rome, Morroco, 700$, 600min
+Canberra, Pyongyang, 1500$, 1440min
+Wellington, Ottawa, 1400$, 1320min
+Tokyo, Kampala, 1400$, 1320min
+Mexico City, Helsinki, 1400$, 1320min
+Ottawa, Addis Ababa, 1400$, 1320min
+Brasilia, Amsterdam, 1300$, 1260min
+Washington, Kampala, 1200$, 1140min
+Kampala, Amsterdam, 1100$, 1020min
+Lagos, Rome, 1300$, 1200min
+Accra, Wellington, 1500$, 1440min
+Addis Ababa, Stockholm, 1400$, 1320min
+Nairobi, Washington, 1200$, 1140min
+Amsterdam, Beijing, 1400$, 1320min
+Lisbon, Doha, 850$, 780min
+Oslo, Khartoum, 1000$, 900min
+Libreville, Lisbon, 800$, 660min
+Helsinki, Rabat, 1100$, 1020min
+Ottawa, Athenes, 1200$, 1140min
+Athenes, Mexico City, 1300$, 1260min
+Brussels, Rabat, 800$, 720min
+Stockholm, Helsinki, 500$, 300min
+Bogota, Accra, 1400$, 1320min
+Morroco, Maputo, 1400$, 1320min
+Santiago, Brussels, 1500$, 1440min
+Athenes, Ottawa, 1200$, 1140min
+Athenes, Mexico City, 1400$, 1320min
+Tunisia, Lagos, 900$, 720min
+Moscow, Baghdad, 690$, 1680min
+Ljubljana, Santiago, 1500$, 1440min 
