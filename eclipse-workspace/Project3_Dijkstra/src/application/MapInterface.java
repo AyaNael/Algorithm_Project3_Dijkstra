@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -15,9 +16,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class MapInterface extends Application {
@@ -34,15 +37,16 @@ public class MapInterface extends Application {
 	TextField distanceTextField;
 	TextArea pathTextArea;
 	private ComboBox<String> activeComboBox; // Track the currently active combo box
-
     private Circle sourceCircle, targetCircle; // Track the two blue circles
-  //  private ToggleButton sourceToggle;
-   // private ToggleButton targetToggle;
-	// Latitude and longitude boundaries
+    private Line[] pathLines = new Line[100]; // Initial size of 100
+    private int pathLineCount = 0; // Counter for the current number of lines
 	private final double minLongitude = -180;
 	private final double maxLongitude = 180;
 	private final double minLatitude = -90;
 	private final double maxLatitude = 90;
+	private Line[] arrowHeads = new Line[200]; // Array to store arrowhead lines
+	private int arrowHeadCount = 0; // Counter for arrowhead lines
+	Label fileName = new Label();
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -75,7 +79,7 @@ public class MapInterface extends Application {
 		plotCapitalsOnMap();
 
 		// Control panel
-		bPane.setRight(createControlPanel());
+		bPane.setRight(createControlPanel(primaryStage));
 		bPane.setCenter(new StackPane(group));
 		bPane.setPadding(new Insets(10));
 
@@ -90,15 +94,15 @@ public class MapInterface extends Application {
 	    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
 	        String line = reader.readLine();
 
-	        // Read the first line and extract the number of capitals and edges
+	        // Check if the file is empty
 	        if (line == null) {
-	            System.out.println("Error: The file is empty.");
+	            showAlert(Alert.AlertType.ERROR, "File Error", "The file is empty.");
 	            return;
 	        }
 
 	        String[] parts = line.split(",");
 	        if (parts.length != 2) {
-	            System.out.println("Error: The first line must contain exactly two values: the number of capitals and edges.");
+	            showAlert(Alert.AlertType.ERROR, "File Error", "The first line must contain exactly two values: the number of capitals and edges.");
 	            return;
 	        }
 
@@ -108,24 +112,24 @@ public class MapInterface extends Application {
 	            numOfCapitals = Integer.parseInt(parts[0].trim());
 	            numOfEdges = Integer.parseInt(parts[1].trim());
 	        } catch (NumberFormatException e) {
-	            System.out.println("Error: The first line must contain numeric values for capitals and edges count.");
+	            showAlert(Alert.AlertType.ERROR, "File Error", "The first line must contain numeric values for capitals and edges count.");
 	            return;
 	        }
 
 	        graph = new Graph(numOfCapitals);
 
-	        // Read the capitals and validate the count
+	        // Read and validate the capitals
 	        int actualCapitalsCount = 0;
 	        for (int i = 0; i < numOfCapitals; i++) {
 	            line = reader.readLine();
 	            if (line == null) {
-	                System.out.println("Error: The file does not contain enough capitals as specified in the first line.");
+	                showAlert(Alert.AlertType.ERROR, "File Error", "The file does not contain enough capitals as specified in the first line.");
 	                return;
 	            }
 
 	            parts = line.split(",");
 	            if (parts.length != 3) {
-	                System.out.println("Error: Each capital line must contain three values: name, latitude, and longitude.");
+	                showAlert(Alert.AlertType.ERROR, "File Error", "Each capital line must contain three values: name, latitude, and longitude.");
 	                return;
 	            }
 
@@ -136,7 +140,7 @@ public class MapInterface extends Application {
 	                latitude = Double.parseDouble(parts[1].trim());
 	                longitude = Double.parseDouble(parts[2].trim());
 	            } catch (NumberFormatException e) {
-	                System.out.println("Error: Latitude and longitude must be numeric values for capital: " + name);
+	                showAlert(Alert.AlertType.ERROR, "File Error", "Latitude and longitude must be numeric values for capital: " + name);
 	                return;
 	            }
 
@@ -145,22 +149,22 @@ public class MapInterface extends Application {
 	        }
 
 	        if (actualCapitalsCount != numOfCapitals) {
-	            System.out.println("Error: The actual number of capitals does not match the count specified in the first line.");
+	            showAlert(Alert.AlertType.ERROR, "File Error", "The actual number of capitals does not match the count specified in the first line.");
 	            return;
 	        }
 
-	        // Read the edges and validate the count
+	        // Read and validate the edges
 	        int actualEdgesCount = 0;
 	        for (int i = 0; i < numOfEdges; i++) {
 	            line = reader.readLine();
 	            if (line == null) {
-	                System.out.println("Error: The file does not contain enough edges as specified in the first line.");
+	                showAlert(Alert.AlertType.ERROR, "File Error", "The file does not contain enough edges as specified in the first line.");
 	                return;
 	            }
 
 	            parts = line.split(",");
 	            if (parts.length != 4) {
-	                System.out.println("Error: Each edge line must contain four values: from, to, cost, and time.");
+	                showAlert(Alert.AlertType.ERROR, "File Error", "Each edge line must contain four values: from, to, cost, and time.");
 	                return;
 	            }
 
@@ -172,7 +176,7 @@ public class MapInterface extends Application {
 	                cost = Double.parseDouble(parts[2].trim().replace("$", ""));
 	                time = Integer.parseInt(parts[3].trim().replace("min", ""));
 	            } catch (NumberFormatException e) {
-	                System.out.println("Error: Cost and time must be numeric values for edge: " + from + " -> " + to);
+	                showAlert(Alert.AlertType.ERROR, "File Error", "Cost and time must be numeric values for edge: " + from + " -> " + to);
 	                return;
 	            }
 
@@ -181,19 +185,24 @@ public class MapInterface extends Application {
 	        }
 
 	        if (actualEdgesCount != numOfEdges) {
-	            System.out.println("Error: The actual number of edges does not match the count specified in the first line.");
+	            showAlert(Alert.AlertType.ERROR, "File Error", "The actual number of edges does not match the count specified in the first line.");
 	            return;
 	        }
-
-	        // Debugging: Display all edges
-	        graph.displayEdges();
 
 	        System.out.println("Graph successfully initialized with " + numOfCapitals + " capitals and " + numOfEdges + " edges.");
 
 	    } catch (IOException e) {
-	        System.out.println("Error: Failed to read the file. " + e.getMessage());
+	        showAlert(Alert.AlertType.ERROR, "File Error", "Failed to read the file. " + e.getMessage());
 	    }
 	}
+	private void showAlert(Alert.AlertType type, String title, String message) {
+	    Alert alert = new Alert(type);
+	    alert.setTitle(title);
+	    alert.setHeaderText(null);
+	    alert.setContentText(message);
+	    alert.showAndWait();
+	}
+
 
 	private void plotCapitalsOnMap() {
 		Capital[] capitals = graph.getVertices();
@@ -238,13 +247,25 @@ public class MapInterface extends Application {
 		});
 	}
 
-	private VBox createControlPanel() {
-		VBox controlPanel = new VBox(5); // Increased spacing for better layout
+	private VBox createControlPanel(Stage primaryStage) {
+		VBox controlPanel = new VBox(5); 
 		controlPanel.setPadding(new Insets(10));
 		controlPanel.setStyle("-fx-border-color: #4a90e2; -fx-border-width: 2; "
 				+ "-fx-background-color: linear-gradient(to bottom, #e6f7ff, #cce7ff);");
 
 		controlPanel.setMaxWidth(200);
+		FileChooser fileChooser = new FileChooser();
+        Button chooseFileButton = new Button("Choose File");
+        chooseFileButton.setOnAction(e -> {
+            File file = fileChooser.showOpenDialog(primaryStage);
+            if (file != null) {
+                initializeGraphFromFile(file.getPath());
+                
+                fileName.setText(file.getName());
+
+            }
+        });
+        
 		Label sourceLabel = new Label("Source:");
 		sourceLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		sourceLabel.setTextFill(Color.DARKBLUE);
@@ -326,7 +347,7 @@ public class MapInterface extends Application {
 		HBox hbox = new HBox(10);
 		hbox.getChildren().addAll(runButton, clearBt);
 		hbox.setAlignment(Pos.CENTER);
-		controlPanel.getChildren().addAll(sourceLabel, sourceComboBox, targetLabel, targetComboBox, filterLabel,
+		controlPanel.getChildren().addAll(chooseFileButton,fileName,sourceLabel, sourceComboBox, targetLabel, targetComboBox, filterLabel,
 				filterComboBox, hbox, pathLb, pathTextArea, distanceLb, distanceTextField, costLb, costTextField,
 				timeLb, timeTextField
 
@@ -336,24 +357,41 @@ public class MapInterface extends Application {
 	}
 
 	private void clearFields() {
-		sourceComboBox.setValue(null);
-		targetComboBox.setValue(null);
-		distanceTextField.clear();
-		pathTextArea.clear();
-		costTextField.clear();
-		filterComboBox.setValue(null);
-		timeTextField.clear();
+	    // Clear combo box selections and text fields
+	    sourceComboBox.setValue(null);
+	    targetComboBox.setValue(null);
+	    distanceTextField.clear();
+	    pathTextArea.clear();
+	    costTextField.clear();
+	    filterComboBox.setValue(null);
+	    timeTextField.clear();
 
-
+	    // Reset circle colors
 	    if (sourceCircle != null) sourceCircle.setFill(Color.RED);
 	    if (targetCircle != null) targetCircle.setFill(Color.RED);
 
 	    sourceCircle = null;
 	    targetCircle = null;
-	  //  sourceToggle.setSelected(false);
-	  //  targetToggle.setSelected(false);
+
+	    // Remove all path lines and arrows
+	    for (int i = 0; i < pathLineCount; i++) {
+	        group.getChildren().remove(pathLines[i]);
+	    }
+	    pathLineCount = 0;
+
+	    // Remove all arrowheads
+	    for (int i = 0; i < arrowHeadCount; i++) {
+	        group.getChildren().remove(arrowHeads[i]);
+	    }
+	    arrowHeadCount = 0;
 	}
+
 	 private void calculateShortestPath() {
+		 if(fileName.getText().isEmpty()) {
+	            Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a file!", ButtonType.OK);
+	            alert.show();
+	            return;
+		 }
 	        if (sourceComboBox.getValue() == null || targetComboBox.getValue() == null || filterComboBox.getValue() == null) {
 	            Alert alert = new Alert(Alert.AlertType.WARNING, "Please select Source, Target, and Filter!", ButtonType.OK);
 	            alert.show();
@@ -392,6 +430,11 @@ public class MapInterface extends Application {
 	                        totalDistance += edge.getDistance();
 	                        totalCost += edge.getCost();
 	                        totalTime += edge.getTime();
+	                        
+
+	                        // Draw the line for the edge
+	                        drawPathLine(previous, current);
+	                        
 	                        break;
 	                    }
 	                }
@@ -410,6 +453,63 @@ public class MapInterface extends Application {
 	            alert.show();
 	        }
 	    }
+
+	 private void drawPathLine(Capital from, Capital to) {
+		    double displayedWidth = imageView.getBoundsInParent().getWidth();
+		    double displayedHeight = imageView.getBoundsInParent().getHeight();
+		    double imageX = imageView.getBoundsInParent().getMinX();
+		    double imageY = imageView.getBoundsInParent().getMinY();
+
+		    double startX = imageX + ((from.getLongitude() - minLongitude) / (maxLongitude - minLongitude)) * displayedWidth;
+		    double startY = imageY + ((maxLatitude - from.getLatitude()) / (maxLatitude - minLatitude)) * displayedHeight;
+
+		    double endX = imageX + ((to.getLongitude() - minLongitude) / (maxLongitude - minLongitude)) * displayedWidth;
+		    double endY = imageY + ((maxLatitude - to.getLatitude()) / (maxLatitude - minLatitude)) * displayedHeight;
+
+		    // Draw the main line
+		    Line line = new Line(startX, startY, endX, endY);
+		    line.setStroke(Color.BLUE);
+		    line.setStrokeWidth(2);
+		    group.getChildren().add(line);
+
+		    // Store the line
+		    if (pathLineCount == pathLines.length) {
+		        Line[] newArray = new Line[pathLines.length * 2];
+		        System.arraycopy(pathLines, 0, newArray, 0, pathLines.length);
+		        pathLines = newArray;
+		    }
+		    pathLines[pathLineCount++] = line;
+
+		    // Draw arrowhead
+		    double arrowLength = 10; // Length of arrowhead lines
+		    double arrowAngle = Math.toRadians(30); // Angle for arrowhead
+		    double angle = Math.atan2(endY - startY, endX - startX);
+
+		    double arrowX1 = endX - arrowLength * Math.cos(angle - arrowAngle);
+		    double arrowY1 = endY - arrowLength * Math.sin(angle - arrowAngle);
+		    Line arrowLine1 = new Line(endX, endY, arrowX1, arrowY1);
+		    arrowLine1.setStroke(Color.BLUE);
+		    arrowLine1.setStrokeWidth(2);
+		    group.getChildren().add(arrowLine1);
+
+		    double arrowX2 = endX - arrowLength * Math.cos(angle + arrowAngle);
+		    double arrowY2 = endY - arrowLength * Math.sin(angle + arrowAngle);
+		    Line arrowLine2 = new Line(endX, endY, arrowX2, arrowY2);
+		    arrowLine2.setStroke(Color.BLUE);
+		    arrowLine2.setStrokeWidth(2);
+		    group.getChildren().add(arrowLine2);
+
+		    // Store the arrowhead lines
+		    if (arrowHeadCount + 2 >= arrowHeads.length) {
+		        Line[] newArray = new Line[arrowHeads.length * 2];
+		        System.arraycopy(arrowHeads, 0, newArray, 0, arrowHeads.length);
+		        arrowHeads = newArray;
+		    }
+		    arrowHeads[arrowHeadCount++] = arrowLine1;
+		    arrowHeads[arrowHeadCount++] = arrowLine2;
+		}
+
+
 	private void handleMarkerClick(Circle marker, String capitalName) {
 	    if (activeComboBox == null) {
 	        Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a ComboBox first!", ButtonType.OK);
