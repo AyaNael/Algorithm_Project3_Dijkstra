@@ -1,4 +1,4 @@
-51,186
+53,220
 Amman,31.953097236405213,35.92160846350562
 Berlin,52.523936298557636,13.415168810010343
 Riyadh,24.726245249614337,46.68275675486493
@@ -27,7 +27,6 @@ Ottawa,45.41906546273187,-75.68340550829463
 Brasilia,-15.800125792506272,-47.892020132402735
 Buenos Aires,-34.6087320487714,-58.56272715611511
 Washington,38.918742158704035,-77.04589294199279
-Kampala,0.30787927105440516,32.58745749566313
 Lagos,0.3307764534022623,32.55540951597385
 Accra,5.5610571054396924,-0.20911905534726047
 Kampala,0.309939177598567,32.582650977296915
@@ -50,18 +49,76 @@ Reykjavik,64.14543700716384,-21.93340810908919
 Conakry,9.510956828153015,-13.708400405671162
 Athenes,15.903542097524346,47.62190124653392
 Jerusalem,31.76944264703155,35.215188813553446
+Ankara, 39.92698480562116, 32.88048143779247
+Abu Dhabi, 24.466497663279434, 54.367663899034
+Paris, 48.85527202591353, 2.3593122931952455
 Riyadh, Bogota, 2500$, 1740min
+Riyadh, Accra, 800$, 540min
+Riyadh, Athenes, 600$, 540min
+Riyadh, Kampala, 1000$, 900min
+Riyadh, Abu Dhabi, 400$, 90min
+Riyadh, Cairo, 500$, 180min
+Riyadh, Ankara, 800$, 240min
+Riyadh, Muscat, 400$, 90min
 Cairo, Mexico City, 820$, 1620min
+Cairo, Abu Dhabi, 700$, 240min
+Cairo, Riyadh, 500$, 180min
+Cairo, Ankara, 600$, 210min
+Cairo, Paris, 1000$, 360min
+Cairo, Stockholm, 900$, 780min
+Cairo, Rome, 700$, 480min
 Moscow, Rabat, 800$, 1200min
+Moscow, Beijing, 1600$, 720min
+Moscow, Abu Dhabi, 2000$, 840min
+Moscow, Cairo, 900$, 360min
+Moscow, Ankara, 800$, 320min
+Moscow, Algiers, 1200$, 540min
+Moscow, Muscat, 1500$, 600min
+Moscow, Washington, 3000$, 960min
+Moscow, Vienna, 600$, 480min
+Moscow, Doha, 850$, 780min
+Moscow, Baghdad, 690$, 1680min
 Baghdad, Accra, 1000$, 1320min
+Baghdad, Moscow, 1000$, 420min
+Baghdad, Washington, 2300$, 960min
+Baghdad, Kampala, 850$, 600min
+Baghdad, Amman, 700$, 660min
 Khartoum, Accra, 760$, 1810min
+Khartoum, Athenes, 600$, 480min
+Khartoum, Vienna, 700$, 720min
+Khartoum, Mogadishu, 600$, 480min
+Khartoum, Cairo, 300$, 120min
 Doha, Cairo, 155$, 180min
+Doha, Riyadh, 700$, 600min
+Doha, Ljubljana, 850$, 600min
 Amman, Rabat, 450$, 720min
+Amman, Doha, 850$, 780min
 Beijing, Oslo, 410$, 1440min
+Beijing, Tokyo, 300$, 210min
+Tokyo, Beijing, 320$, 265min
+Beijing, Ankara, 1300$, 540min
+Beijing, Abu Dhabi, 2000$, 840min
+Beijing, Washington, 3000$, 1200min
+Beijing, Jakarta, 800$, 780min
+Abu Dhabi, Paris, 2500$, 960min
+Abu Dhabi, Cairo, 1000$, 360min
+Abu Dhabi, Muscat, 500$, 120min
+Abu Dhabi, Riyadh, 400$, 90min
 Pyongyang, Morroco, 515$, 1920min
+Muscat, Abu Dhabi, 500$, 120min
 Madrid, Jakarta, 871$, 1065min
+Madrid, Paris, 1000$, 300min
+Madrid, Beijing, 1100$, 1080min
+Madrid, Washington, 3500$, 1440min
 Antananarivo, Ulaanbaatar, 1690$, 2050min
 Rabat, Accra, 624$, 1380min
+Rabat, Abu Dhabi, 2500$, 960min
+Rabat, Washington, 4000$, 1440min
+Ankara, Beijing, 1300$, 540min
+Ankara, Cairo, 500$, 200min
+Ankara, Ottawa, 2200$, 1020min
+Ankara, Muscat, 900$, 360min
+Ankara, Abu Dhabi, 800$, 300min
 Jakarta, Rome, 407$, 1410min
 Mogadishu, Rome, 939$, 1400min
 Ulaanbaatar, Helsinki, 355$, 415min
@@ -70,6 +127,10 @@ Canberra, Bogota, 1650$, 1460min
 Wellington, Amsterdam, 1300$, 1560min
 Tokyo, Vienna, 700$, 720min
 Mexico City, Oslo, 800$, 840min
+Mexico City, Bogota, 12$,270min
+Bogota, Brasilia, 251$,322min
+Santiago, Buenos Aires, 200$, 120min
+Accra, Libreville, 400$, 120min
 Ottawa, Baghdad, 1200$, 1000min
 Brasilia, Conakry, 1400$, 1120min
 Buenos Aires, Conakry, 1550$, 1300min
@@ -93,14 +154,7 @@ Tunisia, Stockholm, 1000$, 780min
 Ljubljana, Tokyo, 1500$, 1080min
 Reykjavik, Washington, 1100$, 1020min
 Conakry, Lagos, 500$, 300min
-Riyadh, Accra, 800$, 540min
-Khartoum, Athenes, 600$, 480min
-Cairo, Stockholm, 900$, 780min
 Maputo, Amsterdam, 1400$, 1260min
-Baghdad, Kampala, 850$, 600min
-Khartoum, Vienna, 700$, 720min
-Doha, Ljubljana, 850$, 600min
-Beijing, Ljubljana, 1100$, 1020min
 Pyongyang, Morroco, 1300$, 1200min
 Muscat, Cairo, 450$, 240min
 Antananarivo, Reykjavik, 1500$, 1320min
@@ -140,16 +194,8 @@ Tunisia, Buenos Aires, 1500$, 1440min
 Ljubljana, Tunisia, 1200$, 960min
 Reykjavik, Helsinki, 500$, 300min
 Conakry, Kampala, 800$, 540min
-Riyadh, Athenes, 600$, 540min
-Cairo, Rome, 700$, 480min
 Maputo, Rabat, 800$, 660min
-Moscow, Vienna, 600$, 480min
-Baghdad, Maputo, 1400$, 1320min
-Khartoum, Doha, 850$, 780min
-Doha, Riyadh, 700$, 600min
-Beijing, Jakarta, 800$, 780min
 Pyongyang, Accra, 1300$, 1260min
-Madrid, Beijing, 1100$, 1080min
 Muscat, Madrid, 800$, 720min
 Antananarivo, Kampala, 700$, 600min
 Algiers, Oslo, 1200$, 1080min
@@ -178,34 +224,26 @@ Libreville, Wellington, 1500$, 1440min
 Helsinki, Jerusalem, 1000$, 960min
 Brussels, Kampala, 1100$, 1020min
 Stockholm, Algiers, 1200$, 1080min
-Amman, Doha, 850$, 780min
-Baghdad, Amman, 700$, 660min
 Bogota, Pyongyang, 1500$, 1440min
 Morroco, Santiago, 1500$, 1440min
 Santiago, Maputo, 1400$, 1320min
 Tunisia, Brussels, 1200$, 960min
 Ljubljana, Addis Ababa, 1200$, 1080min
 Conakry, Wellington, 1500$, 1440min
-Riyadh, Kampala, 1000$, 900min
-Cairo, Mogadishu, 600$, 480min
 Maputo, Conakry, 800$, 660min
-Moscow, Doha, 850$, 780min
-Baghdad, Moscow, 700$, 660min
-Khartoum, Mogadishu, 600$, 480min
-Doha, Riyadh, 700$, 600min
-Beijing, Buenos Aires, 1500$, 1440min
 Pyongyang, Baghdad, 1100$, 1020min
 Jerusalem, Vienna, 800$, 720min
-Madrid, Madrid, 0$, 0min
+Jerusalem, Cairo, 350$, 120min
+Jerusalem, Riyadh, 800$, 300min
 Muscat, Ljubljana, 1100$, 1020min
 Antananarivo, Ulaanbaatar, 1500$, 1440min
+Antananarivo, Maputo, 500$, 180min
 Algiers, Rome, 900$, 720min
 Rabat, Beijing, 1100$, 1020min
 Berlin, Amman, 800$, 720min
 Jakarta, Mexico City, 1400$, 1320min
 Mogadishu, Santiago, 1500$, 1440min
 Ulaanbaatar, Ljubljana, 1400$, 1320min
-Riyadh, Athenes, 800$, 720min
 Rome, Morroco, 700$, 600min
 Canberra, Pyongyang, 1500$, 1440min
 Wellington, Ottawa, 1400$, 1320min
@@ -234,5 +272,4 @@ Santiago, Brussels, 1500$, 1440min
 Athenes, Ottawa, 1200$, 1140min
 Athenes, Mexico City, 1400$, 1320min
 Tunisia, Lagos, 900$, 720min
-Moscow, Baghdad, 690$, 1680min
 Ljubljana, Santiago, 1500$, 1440min 
