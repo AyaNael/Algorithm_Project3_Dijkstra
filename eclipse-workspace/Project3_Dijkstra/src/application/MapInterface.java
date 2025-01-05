@@ -51,7 +51,7 @@ public class MapInterface extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		// Initialize the graph with data from a file
-		initializeGraphFromFile("C:\\Users\\Lenovo\\Desktop\\Algorithm\\Capitals.txt");
+	//	initializeGraphFromFile("C:\\Users\\Lenovo\\Desktop\\Algorithm\\Capitals.txt");
 
 		// Create the main layout
 		BorderPane bPane = new BorderPane();
@@ -76,12 +76,13 @@ public class MapInterface extends Application {
 		imageView.setFitHeight(650); // Set the desired height
 		group.getChildren().add(imageView);
 
-		plotCapitalsOnMap();
+	//	plotCapitalsOnMap();
 
 		// Control panel
-		bPane.setRight(createControlPanel(primaryStage));
-		bPane.setCenter(new StackPane(group));
-		bPane.setPadding(new Insets(10));
+		 VBox controlPanel = createControlPanel(primaryStage);
+		    bPane.setRight(controlPanel);
+		    bPane.setCenter(new StackPane(group));
+		    bPane.setPadding(new Insets(10));
 
 		// Scene and Stage setup
 		Scene scene = new Scene(bPane, 1250, 650);
@@ -191,10 +192,26 @@ public class MapInterface extends Application {
 
 	        System.out.println("Graph successfully initialized with " + numOfCapitals + " capitals and " + numOfEdges + " edges.");
 
+	        // Populate ComboBoxes
+	        populateComboBoxes();
+
 	    } catch (IOException e) {
 	        showAlert(Alert.AlertType.ERROR, "File Error", "Failed to read the file. " + e.getMessage());
 	    }
 	}
+	private void populateComboBoxes() {
+		   if (graph == null) {
+		        System.out.println("Graph is not initialized yet.");
+		        return; // Ensure graph is initialized
+		    }
+	    sourceComboBox.getItems().clear();
+	    targetComboBox.getItems().clear();
+	    for (int i = 0; i < graph.getNumberOfVertices(); i++) {
+	        sourceComboBox.getItems().add(graph.getVertex(i).getCapitalName());
+	        targetComboBox.getItems().add(graph.getVertex(i).getCapitalName());
+	    }
+	}
+
 	private void showAlert(Alert.AlertType type, String title, String message) {
 	    Alert alert = new Alert(type);
 	    alert.setTitle(title);
@@ -255,33 +272,33 @@ public class MapInterface extends Application {
 
 		controlPanel.setMaxWidth(200);
 		FileChooser fileChooser = new FileChooser();
-        Button chooseFileButton = new Button("Choose File");
-        chooseFileButton.setOnAction(e -> {
-            File file = fileChooser.showOpenDialog(primaryStage);
-            if (file != null) {
-                initializeGraphFromFile(file.getPath());
-                
-                fileName.setText(file.getName());
+		Button chooseFileButton = new Button("Choose File");
+		  
+		chooseFileButton.setOnAction(e -> {
+		        File file = fileChooser.showOpenDialog(primaryStage);
+	        	System.out.println("File IS null");
+		        if (file != null) {
+		        	System.out.println("File not null");
+		            initializeGraphFromFile(file.getPath()); // Initialize graph
+		            fileName.setText(file.getName());
+		            populateComboBoxes(); // Populate ComboBoxes
+		            plotCapitalsOnMap(); // Plot capitals
+		        }
+		    });
 
-            }
-        });
-        
+        System.out.println("hi");
 		Label sourceLabel = new Label("Source:");
 		sourceLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		sourceLabel.setTextFill(Color.DARKBLUE);
 		sourceComboBox = new ComboBox<>();
-		for (int i = 0; i < graph.getNumberOfVertices(); i++) {
-			sourceComboBox.getItems().add(graph.getVertex(i).getCapitalName());
-		}
+	
 		setupComboBoxFocus(sourceComboBox); // Setup focus handling for the source ComboBox
 
 		Label targetLabel = new Label("Target:");
 		targetLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		targetLabel.setTextFill(Color.DARKBLUE);
 		targetComboBox = new ComboBox<>();
-		for (int i = 0; i < graph.getNumberOfVertices(); i++) {
-			targetComboBox.getItems().add(graph.getVertex(i).getCapitalName());
-		}
+		
 		setupComboBoxFocus(targetComboBox); // Setup focus handling for the target ComboBox
 
 		Label filterLabel = new Label("Filter:");
@@ -325,7 +342,32 @@ public class MapInterface extends Application {
 		runButton.setOnMouseEntered(e -> runButton.setStyle("-fx-background-color: #45a049; -fx-text-fill: white;"));
 		runButton.setOnMouseExited(e -> runButton.setStyle("-fx-background-color: #4caf50; -fx-text-fill: white;"));
 	
-	    runButton.setOnAction(e -> calculateShortestPath());
+	    runButton.setOnAction(e -> {
+	    	   if (fileName.getText().isEmpty()) {
+	    	        Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a file first!", ButtonType.OK);
+	    	        alert.show();
+	    	        return;
+	    	    }
+	    	  // Reset circle colors
+		    if (sourceCircle != null) sourceCircle.setFill(Color.RED);
+		    if (targetCircle != null) targetCircle.setFill(Color.RED);
+
+		    sourceCircle = null;
+		    targetCircle = null;
+
+		    // Remove all path lines and arrows
+		    for (int i = 0; i < pathLineCount; i++) {
+		        group.getChildren().remove(pathLines[i]);
+		    }
+		    pathLineCount = 0;
+
+		    // Remove all arrowheads
+		    for (int i = 0; i < arrowHeadCount; i++) {
+		        group.getChildren().remove(arrowHeads[i]);
+		    }
+		    arrowHeadCount = 0;
+		    calculateShortestPath();
+	    });
 
 		Button clearBt = new Button("Clear");
 		clearBt.setStyle("-fx-background-color: Blue; -fx-text-fill: white; "
